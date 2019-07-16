@@ -107,8 +107,6 @@ public class DigiDotUtil {
 		try {
 			if (DigiDot.getSpi() != null) {
 				DigiDot.getSpi().write(data);
-				for (short s : data)
-					System.out.println("send: " + s);
 			}
 			else
 				logger.warning("Error while sending data. SpiDevice not initialised. Data: " + data.toString());
