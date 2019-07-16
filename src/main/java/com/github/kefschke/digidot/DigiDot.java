@@ -13,7 +13,7 @@ public class DigiDot {
 	private static int ledCount;
 	private static LEDType ledType = LEDType.RGB;
 	
-	public static void init(int spiChannel, int gpio, int count, LEDType type) {
+	public static void init(int spiChannel, int count, LEDType type) {
 		ledType = type;
 		ledCount = DigiDotUtil.checkLedCount(count, type);
 		
