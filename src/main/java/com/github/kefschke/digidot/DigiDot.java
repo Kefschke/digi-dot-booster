@@ -30,6 +30,12 @@ public class DigiDot {
 		DigiDotUtil.sendShow();
 	}
 	
+	public static void clear() {
+		DigiDotUtil.sendRGB(0, 0, 0);
+		DigiDotUtil.sendSetAll();
+		DigiDotUtil.sendShow();
+	}
+	
 	public static void setRGB(int r, int g, int b) {
 		DigiDotUtil.sendRGB(r, g, b);
 	}
