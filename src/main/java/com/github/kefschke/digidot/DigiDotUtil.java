@@ -190,14 +190,11 @@ public class DigiDotUtil {
 	
 	protected static void writeBytes(short[] data) {
 		try {
-			if (DigiDot.getSpi() != null) {
+			if (DigiDot.getSpi() != null)
 				DigiDot.getSpi().write(data);
-			}
 			else
 				logger.warning("Error while sending data. SpiDevice not initialised. Data: " + data.toString());
-			
-			Thread.sleep(100);
-		} catch (IOException | InterruptedException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
