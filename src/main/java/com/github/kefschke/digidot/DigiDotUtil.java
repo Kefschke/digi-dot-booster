@@ -42,6 +42,29 @@ public class DigiDotUtil {
 		};
 		writeBytes(data);
 	}
+	
+	protected static void sendSetRGB(int led, int r, int g, int b) {
+		short[] data = new short[] {
+				(short) 0xA2,
+				(short) r,
+				(short) g,
+				(short) b,
+				(short) 0xA4,
+				(short) led
+		};
+		writeBytes(data);
+	}
+	
+	protected static void sendFillRGB(int r, int g, int b) {
+		short[] data = new short[] {
+				(short) 0xA1,
+				(short) r,
+				(short) g,
+				(short) b,
+				(short) 0xA5
+		};
+		writeBytes(data);
+	}
 
 	protected static void sendRGBW(int r, int g, int b, int w) {
 		short[] data = new short[] {
@@ -54,6 +77,31 @@ public class DigiDotUtil {
 		writeBytes(data);
 	}
 
+	protected static void sendSetRGBW(int led, int r, int g, int b, int w) {
+		short[] data = new short[] {
+				(short) 0xA2,
+				(short) r,
+				(short) g,
+				(short) b,
+				(short) w,
+				(short) 0xA4,
+				(short) led
+		};
+		writeBytes(data);
+	}
+
+	protected static void sendFillRGBW(int r, int g, int b, int w) {
+		short[] data = new short[] {
+				(short) 0xA1,
+				(short) r,
+				(short) g,
+				(short) b,
+				(short) w,
+				(short) 0xA5
+		};
+		writeBytes(data);
+	}
+	
 	protected static void sendHSV(int hl, int hh, int s, int v) {
 		short[] data = new short[] {
 				(short) 0xA3,
@@ -61,6 +109,31 @@ public class DigiDotUtil {
 				(short) hh,
 				(short) s,
 				(short) v
+		};
+		writeBytes(data);
+	}
+
+	protected static void sendSetHSV(int led, int hl, int hh, int s, int v) {
+		short[] data = new short[] {
+				(short) 0xA3,
+				(short) hl,
+				(short) hh,
+				(short) s,
+				(short) v,
+				(short) 0xA4,
+				(short) led
+		};
+		writeBytes(data);
+	}
+
+	protected static void sendFillHSV(int hl, int hh, int s, int v) {
+		short[] data = new short[] {
+				(short) 0xA3,
+				(short) hl,
+				(short) hh,
+				(short) s,
+				(short) v,
+				(short) 0xA5
 		};
 		writeBytes(data);
 	}
@@ -103,6 +176,18 @@ public class DigiDotUtil {
 		writeBytes(data);
 	}
 
+	protected static void sendClear() {
+		short[] data = new short[] {
+				(short) 0xA1,
+				(short) 0,
+				(short) 0,
+				(short) 0,
+				(short) 0xA5,
+				(short) 0xB2
+		};
+		writeBytes(data);
+	}
+	
 	protected static void writeBytes(short[] data) {
 		try {
 			if (DigiDot.getSpi() != null) {

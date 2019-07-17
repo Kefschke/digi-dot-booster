@@ -31,9 +31,7 @@ public class DigiDot {
 	}
 	
 	public static void clear() {
-		DigiDotUtil.sendRGB(0, 0, 0);
-		DigiDotUtil.sendSetAll();
-		DigiDotUtil.sendShow();
+		DigiDotUtil.sendClear();
 	}
 	
 	public static void setRGB(int r, int g, int b) {
@@ -41,13 +39,11 @@ public class DigiDot {
 	}
 	
 	public static void setRGB(int led, int r, int g, int b) {
-		DigiDotUtil.sendRGB(r, g, b);
-		DigiDotUtil.sendSetLed(led);
+		DigiDotUtil.sendSetRGB(led, r, g, b);
 	}
 	
 	public static void fillRGB(int r, int g, int b) {
-		DigiDotUtil.sendRGB(r, g, b);
-		DigiDotUtil.sendSetAll();
+		DigiDotUtil.sendFillRGB(r, g, b);
 	}
 	
 	public static void setRGBW(int r, int g, int b, int w) {
@@ -55,13 +51,11 @@ public class DigiDot {
 	}
 	
 	public static void setRGBW(int led, int r, int g, int b, int w) {
-		DigiDotUtil.sendRGBW(r, g, b, w);
-		DigiDotUtil.sendSetLed(led);
+		DigiDotUtil.sendSetRGBW(led, r, g, b, w);
 	}
 	
 	public static void fillRGBW(int r, int g, int b, int w) {
-		DigiDotUtil.sendRGBW(r, g, b, w);
-		DigiDotUtil.sendSetAll();
+		DigiDotUtil.sendFillRGBW(r, g, b, w);
 	}
 	
 	public static void setHSV(int hl, int hh, int s, int v) {
@@ -69,13 +63,11 @@ public class DigiDot {
 	}
 	
 	public static void setHSV(int led, int hl, int hh, int s, int v) {
-		DigiDotUtil.sendHSV(hl, hh, s, v);
-		DigiDotUtil.sendSetLed(led);
+		DigiDotUtil.sendSetHSV(led, hl, hh, s, v);
 	}
 	
 	public static void fillHSV(int hl, int hh, int s, int v) {
-		DigiDotUtil.sendHSV(hl, hh, s, v);
-		DigiDotUtil.sendSetAll();
+		DigiDotUtil.sendFillHSV(hl, hh, s, v);
 	}
 	
 	public static void fillRange(int ledBeg, int ledEnd) {
