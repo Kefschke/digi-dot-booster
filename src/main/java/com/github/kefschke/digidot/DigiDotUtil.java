@@ -9,7 +9,7 @@ public class DigiDotUtil {
 	
 	public static int checkLedCount(int ledCount, LEDType type) {
 		if (ledCount > type.getMaxLeds())
-			ledCount = 256;
+			ledCount = type.getMaxLeds();
 		if (ledCount <= 1)
 			ledCount = 2;
 		if (ledCount % 2 != 0)
